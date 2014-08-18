@@ -21,6 +21,3 @@
 #     return n * fact(n - 1)
 # x = int(raw_input("Calculator n! \nplease input a num:"))
 # print x,'! = ',fact(x)
-l = []
-l = range(5)
-print l
