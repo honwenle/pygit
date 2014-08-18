@@ -1,11 +1,3 @@
-# def funcD(a, b,*f, **c):
-#     print a
-#     print b
-#     print f
-#     for x in c:
-#         print x + ':' + str(c[x])
-# funcD(1,2,3,c=2,e=1,x=4)
-
 # #f(n) = 1,2,3,5,8,13,...,n
 # def fib(n):
 #     a,b=0,1
