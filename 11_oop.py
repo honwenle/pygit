@@ -54,3 +54,38 @@ run_twice(Animal())
 run_twice(Dog())
 
 ### 获取对象信息
+# type() 基本类型、函数、类
+type(xxx)
+import types
+type('abc')==types.StringType
+type(int)==type(str)==types.TypeType
+# isinstance() 对象是否属于类
+isinstance(u'a', unicode)
+isinstance(u'a', (str, unicode))
+isinstance(u'a', basestring)
+# dir() 对象的所有属性和方法
+print dir('ABC')
+len('ABC')
+'ABC'.__len__()
+'ABC'.lower()
+
+class MyObject(object):
+    def __init__(self):
+        self.x = 9
+    def power(self):
+        return self.x * self.x
+obj = MyObject()
+hasattr(obj, 'x') # 有属性'x'吗？
+obj.x
+hasattr(obj, 'y') # 有属性'y'吗？
+setattr(obj, 'y', 19) # 设置一个属性'y'
+hasattr(obj, 'y') # 有属性'y'吗？
+getattr(obj, 'y') # 获取属性'y'
+obj.y # 获取属性'y'
+getattr(obj, 'z') # 获取属性'z'
+getattr(obj, 'z', 404) # 获取属性'z'，如果不存在，返回默认值404
+hasattr(obj, 'power') # 有属性'power'吗？
+getattr(obj, 'power') # 获取属性'power'
+fn = getattr(obj, 'power') # 获取属性'power'并赋值到变量fn
+fn # fn指向obj.power
+fn() # 调用fn()与调用obj.power()是一样的
