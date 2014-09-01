@@ -40,7 +40,7 @@ import sys
 sys.path
 
 sys.path.append('/xxx/yyy')
-# PYTHONPATH
+# 系统环境变量PYTHONPATH
 
 # 安装第三方模块
 # python ez_setup.py
