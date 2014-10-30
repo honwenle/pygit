@@ -76,4 +76,30 @@ class Parrot(Bird,Flyable):
 class Ostrich(Bird,Runnable):
     pass
 
-#这课完了之后，先复习前面、加注释和重点、再学习调试
+### 定制类 __xxx__
+class Student(object):
+    def __init__(self, name):
+        self.name = name
+    def __str__(self):
+        return 'Student object (name=%s)' % self.name
+    __repr__ = __str__
+### type() & metaclass
+def hl(self):
+    print("Hello,Type")
+Hello = type('Hello',(object,),dict(hel=hl))
+h = Hello()
+h.hel()
+print(type(Hello))
+print(type(h))
+
+# metaclass是创建类，所以必须从`type`类型派生：
+class ListMetaclass(type):
+    def __new__(cls, name, bases, attrs):
+        attrs['add'] = lambda self, value: self.append(value)
+        return type.__new__(cls, name, bases, attrs)
+
+class MyList(list):
+    __metaclass__ = ListMetaclass # 指示使用ListMetaclass来定制类
+mcL = MyList()
+mcL.add(1)
+print mcL
